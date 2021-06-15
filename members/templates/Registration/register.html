@@ -1,0 +1,63 @@
+
+{% extends 'members/base.html' %}
+
+{% load socialaccount %}
+{% block content %}
+<div class="form mt-4">
+		<form method="POST">
+			{% csrf_token %}
+
+			<h2>Sign Up</h2>
+			<div class="input-box">
+				<i class="fa fa-envelope"></i>
+				{{form.Email}}
+			</div>
+			<div class="input-box">
+				<i class="fa fa-user"></i>
+				{{form.username}}
+			</div>
+			<div class="input-box">
+				<i class="fa fa-user"></i>
+				{{form.First_name}}
+			</div>
+			<div class="input-box">
+				<i class="fa fa-user"></i>
+				{{form.Last_name}}
+			</div>
+			<div class="input-box">
+				<i class="fa fa-lock"></i>
+				{{form.password1}}
+			</div>
+			<div class="input-box">
+				<i class="fa fa-lock"></i>
+				{{form.password2}}
+			</div>
+			<div class="input-box">
+				<input type="submit" name="" value="Login">
+			</div>
+			<h5>Sign Up Using</h5>
+			<ul>
+				<li>
+				<a href="#">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span class="fa fa-facebook"></span>
+				</a>
+				</li>
+				<li>
+				<a href="#">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span class="fa fa-google"></span>
+				</a>
+				</li>
+			</ul>
+			<h4>Already have an account? <a href="{% url 'login' %}">LogIn</a></h4>
+		</form>
+	</div>
+</body>
+{% endblock %}
