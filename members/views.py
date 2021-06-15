@@ -13,6 +13,7 @@ class UserRegisterView(generic.CreateView):
 	template_name = 'Registration/register.html'
 	redirect_authenticated_user = True
 	success_url = reverse_lazy('index')
+	
 	def form_valid(self,form):
 		user = form.save()
 		if user is not None:

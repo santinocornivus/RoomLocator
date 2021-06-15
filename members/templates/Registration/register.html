@@ -6,7 +6,6 @@
 <div class="form mt-4">
 		<form method="POST">
 			{% csrf_token %}
-
 			<h2>Sign Up</h2>
 			<div class="input-box">
 				<i class="fa fa-envelope"></i>
@@ -38,7 +37,7 @@
 			<h5>Sign Up Using</h5>
 			<ul>
 				<li>
-				<a href="#">
+				<a href="{% url 'social:begin' 'facebook' %}">
 					<span></span>
 					<span></span>
 					<span></span>
@@ -47,7 +46,7 @@
 				</a>
 				</li>
 				<li>
-				<a href="#">
+				<a href="{% provider_login_url 'google' %}">
 					<span></span>
 					<span></span>
 					<span></span>
